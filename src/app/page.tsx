@@ -1,23 +1,12 @@
 'use client';
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
-// import Profile from "./components/Profile";
-// import Contents from "./components/Contents";
-// import AboutMe from "./components/AboutMe";
-// import Skills from "./components/Skills";
-// import Services from "./components/Services";
-// import Projects from "./components/Projects";
-// import ContactUs from "./components/ContactUs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Home() {
 
-  const [windowSize, setWindowSize] = useState({
-    width: typeof window !== 'undefined' ? window.innerWidth : 0,
-    height: typeof window !== 'undefined' ? window.innerHeight : 0
-  });
 
   const [isBigScreen, setIsBigScreen] = useState(true);
 
@@ -73,7 +62,7 @@ export default function Home() {
   const pageSection = [
     { frontPage: <h1>Page1</h1>, backPage: <h1>Page2</h1> },
     { frontPage: <h1>Page4</h1>, backPage: <h1>Page5</h1> },
-    { frontPage: <h1>Page6</h1> , backPage: <h1>Page7</h1> },
+    { frontPage: <h1>Page6</h1>, backPage: <h1>Page7</h1> },
   ]
 
 
@@ -120,7 +109,7 @@ export default function Home() {
 
   return (
     <main>
-      {isBigScreen ? <div className={styles.wrapper}>
+      <div className={styles.wrapper}>
         <div className={[styles.cover, styles["cover-left"]].join(" ")}></div>
         <div className={[styles.cover, styles["cover-right"]].join(" ")}></div>
 
@@ -150,10 +139,8 @@ export default function Home() {
           })}
 
         </div>
-      </div> :
-        <div className={styles.apologize}>
-          <h2>We apologize, but this website is currently unavailable on this device. It will be available soon. The currently available device sizes are 10 inches or above, suitable for viewing on laptops and desktops.</h2>
-        </div>}
+      </div>
+
     </main>
   );
 }
