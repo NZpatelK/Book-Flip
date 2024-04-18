@@ -23,20 +23,7 @@ export default function Home() {
     return () => window.removeEventListener('resize', checkScreenSize); // Clean up event listener
   }, []);
 
-  // const handleSelectContent = ((pageId: number) => {
-  //   const pages = document.querySelectorAll(`.${styles["book-page"]}.${styles["page-right"]}`);
-  //   pages.forEach((page: any, index: number) => {
-  //     setTimeout(() => {
-  //       if (index <= pageId) {
-  //         page.classList.add(styles.turn);
-  //         setTimeout(() => {
-  //           page.style.zIndex = (20 + 1).toString();
-  //         }, 500);
-  //       }
-  //     }, (index + 1) * 200 + 100);
-  //   })
 
-  // })
 
   const handleTurnPage = (page: string, index: number) => {
 
